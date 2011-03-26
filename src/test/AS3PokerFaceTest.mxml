@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" applicationComplete="PokerFaceTest()">
+	<mx:Script>
+        <![CDATA[
+		import flash.display.Sprite;
+	
+	import net.houen.cactuskev.PokerEval;
+	import net.houen.cactuskev.PokerLib;
+	import net.houen.pokerface.Card;
+	import net.houen.pokerface.Deck;
+	import net.houen.pokerface.Hand5;
+	import net.houen.pokerface.Hand7;
+
+	/**
+	 * Test class for the PokerFace library
+	 */
+		public function PokerFaceTest():void
+		{
+			testPokerFace();
+            testHand5Eval();
+            testHand7Eval();
+		}
+		
+		public static function testPokerFace():void
+		{
+			trace("This test evaluates the functionality of the PokerFace mediator classes for the AS3 port of CactusKev's poker algorithm");
+			
+			trace("\n********** Evaluating Card,Deck & Hand5 **********\n");
+			trace("The test is not fully automated, so please verify the result of the hand vs hand evaluation manually:\n");
+			
+			//Create a new card deck
+			var myDeck:Deck = new Deck();
+			//Shuffle it
+            myDeck.shuffle();
+            
+            
+            //Pull two 5-card hands from the deck
+            var myHand:Hand5 = myDeck.pull5Hand();
+            var hisHand:Hand5 = myDeck.pull5Hand();
+            //Compare them
+            var comparison:int = myHand.compare(hisHand); 
+            if(comparison == 1)
+            	trace("myHand: " + myHand.toString() + " is BETTER than hisHand: " + hisHand.toString());
+            else if(comparison == -1)
+            	trace("myHand: " + myHand.toString() + " is WORSE than hisHand: " + hisHand.toString());
+            else if(comparison == 0)
+            	trace("myHand: " + myHand.toString() + " is EQUAL to hisHand: " + hisHand.toString());
+                        
+            var card:Card = myDeck.pullCard();
+            myHand.setCard(0,card);
+            
+            trace("By swapping card 0 of myHand with " + card.toString() + ". The hand has now become: " + myHand.toString());
+            
+            trace("\n********** Evaluating Hand7 **********\n");
+            trace("The test is not fully automated, so please verify the result of the hand vs hand evaluation manually:\n");
+            
+            myDeck.reset();
+            myDeck.shuffle();
+            
+            //Pull two 5-card hands from the deck
+            var myHand7:Hand7 = myDeck.pull7Hand();
+            var hisHand7:Hand7 = myDeck.pull7Hand(myHand7.getCard(0),myHand7.getCard(1));
+            //Compare them
+            var comparison7:int = myHand7.compare(hisHand7); 
+            if(comparison7 == 1)
+            	trace("myHand: " + myHand7.toString() + " is BETTER than hisHand: " + hisHand7.toString());
+            else if(comparison7 == -1)
+            	trace("myHand: " + myHand7.toString() + " is WORSE than hisHand: " + hisHand7.toString());
+            else if(comparison7 == 0)
+            	trace("myHand: " + myHand7.toString() + " is EQUAL to hisHand: " + hisHand7.toString());
+                        
+            card = myDeck.pullCard();
+            myHand7.setCard(0,card);
+            
+            trace("By swapping card 0 of myHand with " + card.toString() + ". The hand has now become: " + myHand7.toString());
+		}
+		
+		public static function testHand5Eval():void
+		{
+			var a:int, b:int, c:int, d:int, e:int, j:int;
+            var i:uint;
+            var deck:Array = new Array(52);
+            var hand:Array = new Array(5);
+            var freq:Array = [0,0,0,0,0,0,0,0,0,0];
+
+            // Init the deck in the Cactus Kev format..
+            PokerLib.init_deck(deck);
+            //PokerLib.shuffle_deck(deck);
+
+            trace("\n\nCactus Kev's Hand Evaluator in AS3, by Søren Houen");
+            trace("-------------------------------------------------\n");
+            trace("Enumerating and evaluating all 2,598,960 unique 5-card poker hands...\n");
+
+			var date:Date = new Date();
+            var timeTaken:int = date.getTime(); //Time before hand evaluation
+            
+            for(a=0;a<48;a++) {
+                hand[0] = deck[a];
+                for(b=a+1;b<49;b++) {
+                    hand[1] = deck[b];
+                    for(c=b+1;c<50;c++) {
+                        hand[2] = deck[c];
+                        for(d=c+1;d<51;d++) {
+                            hand[3] = deck[d];
+                            for(e=d+1;e<52;e++) {
+                                hand[4] = deck[e];
+
+                                i = PokerEval.eval_5hand_fast(hand);
+                                j = PokerLib.hand_rank(i);
+                                freq[j] = freq[j] + 1;
+                                
+                                //trace(PokerLib.print_hand(hand,5));
+                            }
+                        }
+                    }
+                }
+            }
+
+			var date2:Date = new Date(); //Time after hand evaluation
+            timeTaken = date2.getTime() - timeTaken;
+
+			
+            trace("No Pair:           " + freq[9] + " == 1.302.540 => " + (freq[9] == 1302540).toString());
+            trace("One Pair:          " + freq[8] + " == 1.098.240 => " + (freq[8] == 1098240).toString());
+            trace("Two Pair:          " + freq[7] + " == 123.552 => " + (freq[7] == 123552).toString());
+            trace("Three of a Kind:   " + freq[6] + " == 54.912 => " + (freq[6] == 54912).toString());
+            trace("Straight:          " + freq[5] + " == 10.200 => " + (freq[5] == 10200).toString());
+            trace("Flush:             " + freq[4] + " == 5.108 => " + (freq[4] == 5108).toString());
+            trace("Full House:        " + freq[3] + " == 3.744 => " + (freq[3] == 3744).toString());
+            trace("Four of a Kind:    " + freq[2] + " == 624 => " + (freq[2] == 624).toString());
+            trace("StraightFlush:     " + freq[1] + " == 40 => " + (freq[1] == 40).toString());
+            trace("BAD!:              " + freq[0] + " == 0 => " + (freq[0] == 0).toString());
+            
+            if(freq[9] == 1302540 && freq[8] == 1098240 && freq[7] == 123552 && freq[6] == 54912 && freq[5] == 10200 && freq[4] == 5108 && freq[3] == 3744 && freq[2] == 624 && freq[1] == 40 && freq[0] == 0)
+            	trace("\nTEST PASSED");
+            else
+				trace("\nTEST FAILED");
+			
+            var totalHands:int = 0;
+            for (var cat:int = 0; cat < 10; cat++)
+                totalHands += freq[cat];
+            
+            trace("Enumerated and evaluated " + totalHands + " hands in " + timeTaken + " milliseconds.");
+		}
+		
+		//////////////////////////////////////////////////////////////////////////////
+		// Now let's enumerate and evaluate all 7-card poker hands...
+		//////////////////////////////////////////////////////////////////////////////
+		public function testHand7Eval():void
+		{
+	
+		var a:int, b:int, c:int, d:int, e:int, j:int;
+        var i:uint;
+        var deck:Array = new Array(52);
+        var hand:Array = new Array(7);
+        var freq:Array = [0,0,0,0,0,0,0,0,0,0];
+        
+        PokerLib.init_deck(deck);
+
+		trace("\n\nEnumerating and evaluating all 133,784,560 possible 7-card poker hands...\n");
+		trace("This will take hours (~2.5 hours on a 2.8 Ghz Core 2 Duo w. 4Gb RAM)...\n\n");
+
+		var date:Date = new Date();
+        var timeTaken:int = date.getTime(); //Time before hand evaluation
+		var numEval:int = 0;
+	
+		for (var c0:int = 0; c0 < 46; c0++) {
+			hand[0] = deck[c0];
+			for (var c1:int = c0+1; c1 < 47; c1++) {
+				hand[1] = deck[c1];
+	 			for (var c2:int = c1+1; c2 < 48; c2++) {
+					hand[2] = deck[c2];
+					for (var c3:int = c2+1; c3 < 49; c3++) {
+						hand[3] = deck[c3];
+	 					for (var c4:int = c3+1; c4 < 50; c4++) {
+							hand[4] = deck[c4];
+							for (var c5:int = c4+1; c5 < 51; c5++) {
+								hand[5] = deck[c5];
+	 							for (var c6:int = c5+1; c6 < 52; c6++) {
+									hand[6] = deck[c6];
+									//if(numEval < 1000000) {
+									var equivClass:int = PokerEval.eval_7hand( hand );
+									var handCategory:int = PokerLib.hand_rank( equivClass );
+									freq[handCategory]++;
+									//numEval++;
+									//}
+									
+									/*if(numEval % 100000 == 0) {
+										var dateTemp:Date = new Date(); //Time after hand evaluation
+        								var timeTakenTemp:int = dateTemp.getTime() - timeTaken;
+
+										trace("\nUpdate: Enumerated and evaluated " + (numEval) + " hands in " + Math.floor((timeTakenTemp / (60 * 60 * 1000))) + " hours, " + Math.floor((timeTakenTemp / (1000 * 60)) % (60 * 60)) + " minutes, " + Math.floor((timeTakenTemp / 1000) % 60) + " seconds.");
+
+									    trace("No Pair:           " + freq[9]);
+							            trace("One Pair:          " + freq[8]);
+							            trace("Two Pair:          " + freq[7]);
+							            trace("Three of a Kind:   " + freq[6]);
+							            trace("Straight:          " + freq[5]);
+							            trace("Flush:             " + freq[4]);
+							            trace("Full House:        " + freq[3]);
+							            trace("Four of a Kind:    " + freq[2]);
+							            trace("StraightFlush:     " + freq[1]);
+							            trace("BAD!:              " + freq[0]);
+										
+										break;
+									}*/
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		var date2:Date = new Date(); //Time after hand evaluation
+        timeTaken = date2.getTime() - timeTaken;
+
+	   trace("No Pair:           " + freq[9] + " == 23.294.460 => " + (freq[9] == 23294460).toString());
+            trace("One Pair:          " + freq[8] + " == 58.627.800 => " + (freq[8] == 58627800).toString());
+            trace("Two Pair:          " + freq[7] + " == 31.433.400 => " + (freq[7] == 31433400).toString());
+            trace("Three of a Kind:   " + freq[6] + " == 6.461.620 => " + (freq[6] == 6461620).toString());
+            trace("Straight:          " + freq[5] + " == 6.180.020 => " + (freq[5] == 6180020).toString());
+            trace("Flush:             " + freq[4] + " == 4.047.644 => " + (freq[4] == 4047644).toString());
+            trace("Full House:        " + freq[3] + " == 3.473.184 => " + (freq[3] == 3473184).toString());
+            trace("Four of a Kind:    " + freq[2] + " == 224.848 => " + (freq[2] == 224848).toString());
+            trace("StraightFlush:     " + freq[1] + " == 41.584 => " + (freq[1] == 41584).toString());
+            trace("BAD!:              " + freq[0] + " == 0 => " + (freq[0] == 0).toString());
+            
+            if(freq[9] == 23294460 && freq[8] == 58627800 && freq[7] == 31433400 && freq[6] == 6461620 && freq[5] == 6180020 && freq[4] == 4047644 && freq[3] == 3473184 && freq[2] == 224848 && freq[1] == 41584 && freq[0] == 0)
+            	trace("\nTEST PASSED");
+            else
+				trace("\nTEST FAILED");
+	
+		var totalHands:int = 0;
+		for (var category:int = 0; category < 10; category++)
+			totalHands += freq[category];
+		trace("Enumerated and evaluated " + totalHands + " hands in " + timeTaken + " milliseconds.");
+	
+		}
+        ]]>
+	</mx:Script>
+</mx:WindowedApplication>

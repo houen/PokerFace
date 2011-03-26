@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="Hand7,net.houen.pokerface.Hand7,recalcStrength,setCard" name="keywords">
+<title>net.houen.pokerface.Hand7</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Hand7 - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?net/houen/pokerface/Hand7.html&amp;net/houen/pokerface/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Hand7</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Hand7"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">net.houen.pokerface</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Hand7</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Hand7 <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="AHand.html">AHand</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="IHand.html">IHand</a></td>
+</tr>
+</table>
+<p></p>
+   Represents a seven card poker hand.
+   <p>Has methods to very quickly evaluate hand strength and category (one pair, flush etc.) by using CactusKev's poker hand analysis algorithm</p>
+   <p>Can get and swap individual cards, and compare two poker hands to each other</p>
+   <p>Tested to evaluate 133 mio. hands in approx. 2.5 hours on a 2.8 Ghz Core 2 Duo, or approx. 14.000 hands per second</p>
+   <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../pokerface/Deck.html" target="">net.houen.pokerface.Deck</a>
+<br>
+<a href="../pokerface/Card.html" target="">net.houen.pokerface.Card</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable hideInheritedProperty" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="AHand.html#category">category</a> : String<div class="summaryTableDescription">
+   Get the name of the current hand category (One Pair, Flush, etc.)
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="AHand.html">AHand</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="AHand.html#strength">strength</a> : int<div class="summaryTableDescription">
+   Get the hands strength in cactuskev format
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="AHand.html">AHand</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedProperty" id="hideInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Properties</a>
+</div>
+<div class="showInheritedProtectedProperty" id="showInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Properties</a>
+</div>
+</div>
+<table id="summaryTableProtectedProperty" class="summaryTable hideInheritedProtectedProperty" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="AHand.html#HAND_CARDS_NUM">HAND_CARDS_NUM</a> : uint<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="AHand.html">AHand</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Hand7()">Hand7</a>(cardReps:Array, name:String = "")</div>
+<div class="summaryTableDescription">
+   Create new hand
+   </div>
+</td><td class="summaryTableOwnerCol">Hand7</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AHand.html#compare()">compare</a>(handOther:<a href="../pokerface/AHand.html">AHand</a>):int</div>
+<div class="summaryTableDescription">
+   Compare two hands to eachother
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="AHand.html">AHand</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AHand.html#getCard()">getCard</a>(num:uint):<a href="../pokerface/Card.html">Card</a>
+</div>
+<div class="summaryTableDescription">
+   Get a Card in the hand
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="AHand.html">AHand</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#recalcStrength()">recalcStrength</a>():void</div>
+<div class="summaryTableDescription">
+   Recalculate the hand strength.</div>
+</td><td class="summaryTableOwnerCol">Hand7</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setCard()">setCard</a>(num:uint, card:<a href="Card.html">Card</a>):void</div>
+<div class="summaryTableDescription">
+   Set a card in the hand to a certain card.</div>
+</td><td class="summaryTableOwnerCol">Hand7</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AHand.html#toString()">toString</a>():String</div>
+<div class="summaryTableDescription">
+   The string representation of the hand
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="AHand.html">AHand</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedMethod" id="hideInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Methods</a>
+</div>
+<div class="showInheritedProtectedMethod" id="showInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Methods</a>
+</div>
+</div>
+<table id="summaryTableProtectedMethod" class="summaryTable hideInheritedProtectedMethod" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AHand.html#setStrength()">setStrength</a>(strength:int):void</div>
+<div class="summaryTableDescription">
+   Set the hands cactuskev strength (unique hand strength for every possible poker hand)
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="AHand.html">AHand</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AHand.html#setTheCard()">setTheCard</a>(num:uint, card:<a href="../pokerface/Card.html">Card</a>):void</div>
+<div class="summaryTableDescription">
+   Set a card in the hand.</div>
+</td><td class="summaryTableOwnerCol"><a href="AHand.html">AHand</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Hand7()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Hand7</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Hand7(cardReps:Array, name:String = "")</code><p>
+   Create new hand
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">cardReps</span>:Array</code> &mdash; An array of card representations in the cactuskev format (often delivered by a hand pull from Deck class
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> (default = "<code></code>")<code></code> &mdash; A custom name for this hand
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="recalcStrength()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">recalcStrength</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function recalcStrength():void</code><p>
+   Recalculate the hand strength. Called automatically every time a hand is created or a card is changed
+   </p></div>
+<a name="setCard()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setCard</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setCard(num:uint, card:<a href="Card.html">Card</a>):void</code><p>
+   Set a card in the hand to a certain card.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">num</span>:uint</code> &mdash; The card number to change
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">card</span>:<a href="Card.html">Card</a></code> &mdash; The card to change to
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="AHand.html" target="">AHand</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

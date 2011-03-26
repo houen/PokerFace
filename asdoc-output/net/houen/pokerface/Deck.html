@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="Deck,net.houen.pokerface.Deck,peekCard,pull5Hand,pull7Hand,pullCard,reset,resetShuffled,shuffle" name="keywords">
+<title>net.houen.pokerface.Deck</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Deck - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?net/houen/pokerface/Deck.html&amp;net/houen/pokerface/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Deck</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Deck"); titleBar_setSubNav(false,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">net.houen.pokerface</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Deck</td>
+</tr>
+</table>
+<p></p>
+  Represents a deck of 52 cards modeled by Card objects
+  
+  <p>The Deck object can create and shuffle 52 playing vcard representations for use with the Hand5 and Card objects.</p>
+  <p>It is the natural starting point for creating random poker hands.</p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../pokerface/Card.html" target="">net.houen.pokerface.Card</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Deck()">Deck</a>()</div>
+<div class="summaryTableDescription">
+   Creates the deck unshuffled.</div>
+</td><td class="summaryTableOwnerCol">Deck</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#peekCard()">peekCard</a>(num:int = -1, name:String = ""):<a href="../pokerface/Card.html">Card</a>
+</div>
+<div class="summaryTableDescription">
+   Returns the last card from the deck, leaving it in the deck
+   
+   </div>
+</td><td class="summaryTableOwnerCol">Deck</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#pull5Hand()">pull5Hand</a>(name:String = ""):<a href="../pokerface/Hand5.html">Hand5</a>
+</div>
+<div class="summaryTableDescription">
+   Returns a 5 card Hand5 object from the last 5 cards in the deck, removing them at the same time
+   
+   </div>
+</td><td class="summaryTableOwnerCol">Deck</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#pull7Hand()">pull7Hand</a>(card1:<a href="Card.html">Card</a> = null, card2:<a href="Card.html">Card</a> = null, name:String = ""):<a href="../pokerface/Hand7.html">Hand7</a>
+</div>
+<div class="summaryTableDescription">
+   Returns a 7 card Hand7 object from the last 7 cards in the deck, removing them at the same time
+   
+   </div>
+</td><td class="summaryTableOwnerCol">Deck</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#pullCard()">pullCard</a>(name:String = ""):<a href="../pokerface/Card.html">Card</a>
+</div>
+<div class="summaryTableDescription">
+   Returns the last card from the deck, removing it at the same time
+   
+   </div>
+</td><td class="summaryTableOwnerCol">Deck</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#reset()">reset</a>():void</div>
+<div class="summaryTableDescription">
+   Resets the deck, causing all cards to be present and ordered
+   </div>
+</td><td class="summaryTableOwnerCol">Deck</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#resetShuffled()">resetShuffled</a>():void</div>
+<div class="summaryTableDescription">
+   Resets the deck, causing all cards to be present and unordered
+   </div>
+</td><td class="summaryTableOwnerCol">Deck</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#shuffle()">shuffle</a>():void</div>
+<div class="summaryTableDescription">
+   Shuffles the deck, causing cards to be in random order
+   
+   <p>Should nearly always be the first thing you do after initializing a deck</p>
+   </div>
+</td><td class="summaryTableOwnerCol">Deck</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Deck()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Deck</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Deck()</code><p>
+   Creates the deck unshuffled. This should normally be followed be an immediate shuffle operation
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="peekCard()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">peekCard</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function peekCard(num:int = -1, name:String = ""):<a href="../pokerface/Card.html">Card</a></code><p>
+   Returns the last card from the deck, leaving it in the deck
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">num</span>:int</code> (default = <code>-1</code>)<code></code> &mdash; The number in the deck to return, empty for random
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> (default = "<code></code>")<code></code> &mdash; A custom id name for the card
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../pokerface/Card.html">Card</a></code> &mdash; 
+                        A net.houen.pokerface.Card object representing the card pulled
+   
+                        
+                     </td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="error/DeckError.html">DeckError</a> </code> &mdash; If no cards left in deck
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../pokerface/Card.html" target="">net.houen.pokerface.Card</a>
+</div>
+</div>
+<a name="pull5Hand()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pull5Hand</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function pull5Hand(name:String = ""):<a href="../pokerface/Hand5.html">Hand5</a></code><p>
+   Returns a 5 card Hand5 object from the last 5 cards in the deck, removing them at the same time
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> (default = "<code></code>")<code></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../pokerface/Hand5.html">Hand5</a></code> &mdash; 
+                        A net.houen.pokerface.Hand object representing the hand pulled
+   
+                        
+                     </td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="error/DeckError.html">DeckError</a> </code> &mdash; If less than five cards left in deck
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../pokerface/Card.html" target="">net.houen.pokerface.Card</a>
+<br>net.houen.pokerface.Hard5</div>
+</div>
+<a name="pull7Hand()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pull7Hand</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function pull7Hand(card1:<a href="Card.html">Card</a> = null, card2:<a href="Card.html">Card</a> = null, name:String = ""):<a href="../pokerface/Hand7.html">Hand7</a></code><p>
+   Returns a 7 card Hand7 object from the last 7 cards in the deck, removing them at the same time
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">card1</span>:<a href="Card.html">Card</a></code> (default = <code>null</code>)<code></code> &mdash; A Card object to put as first card in hand (e.g. for Texas Hold'em shared cards
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">card2</span>:<a href="Card.html">Card</a></code> (default = <code>null</code>)<code></code> &mdash; A Card object to put as second card in hand
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> (default = "<code></code>")<code></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../pokerface/Hand7.html">Hand7</a></code> &mdash; 
+                        A net.houen.pokerface.Hand object representing the hand pulled
+   
+                        
+                     </td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="error/DeckError.html">DeckError</a> </code> &mdash; If less than five cards left in deck, or only one Card supplied
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../pokerface/Card.html" target="">net.houen.pokerface.Card</a>
+<br>
+<a href="../pokerface/Hand7.html" target="">net.houen.pokerface.Hand7</a>
+</div>
+</div>
+<a name="pullCard()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pullCard</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function pullCard(name:String = ""):<a href="../pokerface/Card.html">Card</a></code><p>
+   Returns the last card from the deck, removing it at the same time
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> (default = "<code></code>")<code></code> &mdash; A custom id name for the card
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../pokerface/Card.html">Card</a></code> &mdash; 
+                        A net.houen.pokerface.Card object representing the card pulled
+   
+                        
+                     </td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="error/DeckError.html">DeckError</a> </code> &mdash; If no cards left in deck
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../pokerface/Card.html" target="">net.houen.pokerface.Card</a>
+<br>
+<a href="../pokerface/Hand5.html" target="">net.houen.pokerface.Hand5</a>
+</div>
+</div>
+<a name="reset()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reset</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function reset():void</code><p>
+   Resets the deck, causing all cards to be present and ordered
+   </p></div>
+<a name="resetShuffled()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resetShuffled</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function resetShuffled():void</code><p>
+   Resets the deck, causing all cards to be present and unordered
+   </p></div>
+<a name="shuffle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">shuffle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function shuffle():void</code><p>
+   Shuffles the deck, causing cards to be in random order
+   
+   </p><p>Should nearly always be the first thing you do after initializing a deck</p>
+   </div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->
