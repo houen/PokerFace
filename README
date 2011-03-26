@@ -1,4 +1,4 @@
-This [Actionscript Flash poker, 5-card & Texas Hold’em, hand strength evaluator](http://blog.houen.net/actionscript-3-poker-hand-evaluator/ "Actionscript Flash poker 5-card & Texas Hold’em hand strength evaluator") will evaluate more than 14,000 hands per second, with a size of around 6 kb. It also includes classes to wrap everything up nice and tight for convenience.
+This Actionscript Flash poker (5-card & Texas Hold’em) evaluator will evaluate more than 14,000 hands per second, with a size of around 6 kb. It also includes classes to wrap everything up nice and tight for convenience.
 
 Starting from [this post](http://www.codingthewheel.com/archives/poker-hand-evaluator-roundup "Poker blog post") about poker hand evaluators, i converted the improved version of [Cactukev’s poker hand evaluator](http://www.suffecool.net/poker/evaluator.html "Cactukev’s poker hand evaluator") to AS3 some time ago, and wrapped it in some nice OO classes to make it easily accessible.
 
@@ -16,4 +16,4 @@ The test to evaluate that it runs correctly here (AIR application)
 
 *License:*
 The original code i ported it from was released to the public domain, and is as such free to use, modify and redistribute.
-I am releasing this code under the MIT license. License info is found in the source files..
+I am releasing this code under the MIT license. License info is found in the source files.
